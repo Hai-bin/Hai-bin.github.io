@@ -58,6 +58,46 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-wechall-Blinded-by-the-light" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/14/wechall-Blinded-by-the-light/" class="article-date">
+  <time datetime="2016-10-14T12:16:47.000Z" itemprop="datePublished">2016-10-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/14/wechall-Blinded-by-the-light/">wechall|Blinded by the light</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>hack点<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">blightVuln</span><span class="params">($password)</span></span></div><div class="line">&#123;</div><div class="line">        <span class="comment"># Do not mess with other sessions!</span></div><div class="line">        <span class="keyword">if</span> ( (strpos($password, <span class="string">'/*'</span>) !== <span class="keyword">false</span>) || (stripos($password, <span class="string">'blight'</span>) !== <span class="keyword">false</span>) )</div><div class="line">        &#123;</div><div class="line">                <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        $db = blightDB();</div><div class="line">        $sessid = GWF_Session::getSession()-&gt;getID();</div><div class="line">        $query = <span class="string">"SELECT 1 FROM (SELECT password FROM blight WHERE sessid=$sessid) b WHERE password='$password'"</span>;</div><div class="line">        <span class="keyword">return</span> $db-&gt;queryFirst($query) !== <span class="keyword">false</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>这一句<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">"<span class="keyword">SELECT</span> <span class="number">1</span> <span class="keyword">FROM</span> (<span class="keyword">SELECT</span> <span class="keyword">password</span> <span class="keyword">FROM</span> blight <span class="keyword">WHERE</span> sessid=$sessid) b <span class="keyword">WHERE</span> <span class="keyword">password</span>=<span class="string">'$password'</span><span class="string">";</span></div><div class="line">")<span class="string">"</span></div></pre></td></tr></table></figure></p>
+<p>开始不理解 b的意思<br>后来反应过来是前面的临时表(SELECT password FROM blight WHERE sessid=$sessid)的别名 省去了 AS<br>不加这个的话 就会报错:<br> Every derived table must have its own alias   </p>
+<p>另外 此题不会做<br>题解:<br><a href="http://1176518111.blog.51cto.com/9678787/1693484/" target="_blank" rel="external">题解～～～</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/10/14/wechall-Blinded-by-the-light/" data-id="ciu9qzm0i000h9tpkh39kh0qz" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-underscore" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/10/09/underscore/" class="article-date">
@@ -83,12 +123,12 @@
         <blockquote>
 <p>Underscore is a JavaScript library that provides a whole mess of useful functional programming helpers without extending any built-in objects.</p>
 </blockquote>
-<p>node 里 这样 用就行啦<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">//example.js</div><div class="line">var _ = require(&apos;../underscore&apos;);</div><div class="line">function unsplat(fun) &#123;</div><div class="line">  return function() &#123;</div><div class="line">    return fun.call(null, _.toArray(arguments));</div><div class="line">  &#125;;</div><div class="line">&#125;</div><div class="line">var joinElement = unsplat(function(array) &#123;return array.join(&apos; &apos;)&#125;);</div><div class="line"></div><div class="line">var res = joinElement(1, 2);</div><div class="line">console.log(res);</div><div class="line">//=&gt;&quot;1 2&quot;</div></pre></td></tr></table></figure></p>
+<p>node 里 这样 用就行啦<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//example.js</span></div><div class="line"><span class="keyword">var</span> _ = <span class="built_in">require</span>(<span class="string">'../underscore'</span>);</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">unsplat</span>(<span class="params">fun</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> fun.call(<span class="literal">null</span>, _.toArray(<span class="built_in">arguments</span>));</div><div class="line">  &#125;;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> joinElement = unsplat(<span class="function"><span class="keyword">function</span>(<span class="params">array</span>) </span>&#123;<span class="keyword">return</span> array.join(<span class="string">' '</span>)&#125;);</div><div class="line"></div><div class="line"><span class="keyword">var</span> res = joinElement(<span class="number">1</span>, <span class="number">2</span>);</div><div class="line"><span class="built_in">console</span>.log(res);</div><div class="line"><span class="comment">//=&gt;"1 2"</span></div></pre></td></tr></table></figure></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/10/09/underscore/" data-id="ciu22kjby000ljqpkx2myfxz2" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2016/10/09/underscore/" data-id="ciu9qzm0m000j9tpk53ozkfpp" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/函数式/">函数式</a></li></ul>
@@ -157,7 +197,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/10/07/函数调用惯例/" data-id="ciu22kjbz000njqpkn8mqari9" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2016/10/07/函数调用惯例/" data-id="ciu9qzm0v000p9tpkdgdsxflh" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/周五/">周五</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/国庆/">国庆</a></li></ul>
@@ -215,7 +255,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/09/23/SQLi-杂/" data-id="ciu22kjba0003jqpk39rwcofl" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2016/09/23/SQLi-杂/" data-id="ciu9qzlzl00009tpkd693kgg4" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -257,7 +297,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/09/23/我还没放弃学英语呢/" data-id="ciu22kjc6000ujqpkc0szfhzi" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2016/09/23/我还没放弃学英语呢/" data-id="ciu9qzm0w000r9tpkp8l67sfu" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/周五/">周五</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习/">学习</a></li></ul>
@@ -343,7 +383,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/09/23/SQLi/" data-id="ciu22kjbc0004jqpkp95oa0qn" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2016/09/23/SQLi/" data-id="ciu9qzm0700089tpkaxx33sp8" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/周五/">周五</a></li></ul>
@@ -382,7 +422,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/09/22/搭了sqli-labs/" data-id="ciu22kjc8000wjqpk8y2osawk" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2016/09/22/搭了sqli-labs/" data-id="ciu9qzm11000w9tpk6nk9scte" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/周四/">周四</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/好久不记东西/">好久不记东西</a></li></ul>
@@ -467,7 +507,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/07/26/JSP隐式对象/" data-id="ciu22kjb00000jqpkzk98thzz" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2016/07/26/JSP隐式对象/" data-id="ciu9qzm0200059tpkxe752nk6" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jsp/">jsp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web/">web</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/周二/">周二</a></li></ul>
@@ -520,7 +560,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/07/18/java-shallow-copy-deep-cpoy/" data-id="ciu22kjbi0007jqpk5z8b8hex" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2016/07/18/java-shallow-copy-deep-cpoy/" data-id="ciu9qzm0400079tpkajm39894" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/周一/">周一</a></li></ul>
@@ -558,48 +598,9 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/07/18/java匿名内部类/" data-id="ciu22kjbm000ajqpk3g1y1yrg" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2016/07/18/java匿名内部类/" data-id="ciu9qzm0000049tpklyb4tap2" class="article-share-link">Partager</a>
       
       
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-关于Java" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/07/18/关于Java/" class="article-date">
-  <time datetime="2016-07-18T05:06:28.000Z" itemprop="datePublished">2016-07-18</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/18/关于Java/">关于Java</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>作为一条通用规则，类在范围的封装和受限层次越深，对其命名的自由度也越大(什么意思。。)</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/07/18/关于Java/" data-id="ciu22kjc2000pjqpkx5fg68u3" class="article-share-link">Partager</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/周一/">周一</a></li></ul>
-
     </footer>
   </div>
   
@@ -655,6 +656,10 @@
       <ul>
         
           <li>
+            <a href="/2016/10/14/wechall-Blinded-by-the-light/">wechall|Blinded by the light</a>
+          </li>
+        
+          <li>
             <a href="/2016/10/09/underscore/">underscore</a>
           </li>
         
@@ -668,10 +673,6 @@
         
           <li>
             <a href="/2016/09/23/我还没放弃学英语呢/">我还没放弃学英语呢</a>
-          </li>
-        
-          <li>
-            <a href="/2016/09/23/SQLi/">SQLi-使用条件语句</a>
           </li>
         
       </ul>
