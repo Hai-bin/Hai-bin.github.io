@@ -45,9 +45,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS-каналы"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Поиск"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -57,6 +57,94 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-胡乱配了下vim" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/11/25/胡乱配了下vim/" class="article-date">
+  <time datetime="2016-11-25T03:13:43.000Z" itemprop="datePublished">2016-11-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/25/胡乱配了下vim/">胡乱配了下vim</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">syntax</span> <span class="keyword">on</span></div><div class="line"><span class="keyword">set</span> <span class="built_in">cindent</span> autoindent <span class="keyword">number</span> <span class="keyword">sts</span>=<span class="number">4</span> <span class="keyword">sw</span>=<span class="number">4</span> <span class="keyword">ts</span>=<span class="number">4</span> et</div><div class="line"><span class="keyword">set</span> backspace=<span class="built_in">indent</span>,eol,start</div><div class="line"></div><div class="line"><span class="keyword">autocmd</span> FileType <span class="keyword">python</span> <span class="keyword">setlocal</span> makeprg=<span class="keyword">python</span>\ %</div><div class="line"><span class="keyword">autocmd</span> FileType <span class="keyword">c</span> <span class="keyword">setlocal</span> makeprg=gcc\ -<span class="keyword">o</span>\ %&lt;\ %</div><div class="line"><span class="keyword">autocmd</span> FileType cpp <span class="keyword">setlocal</span> makeprg=g++\ -<span class="keyword">o</span>\ %&lt;\ %</div><div class="line"><span class="keyword">autocmd</span> FileType java <span class="keyword">setlocal</span> makeprg=java\ %</div><div class="line"></div><div class="line"><span class="keyword">colorscheme</span> industry</div><div class="line"></div><div class="line"><span class="keyword">map</span> <span class="symbol">&lt;F2&gt;</span> :<span class="keyword">call</span> SetTitle()<span class="symbol">&lt;CR&gt;</span></div><div class="line"><span class="keyword">map</span> <span class="symbol">&lt;F5&gt;</span> :<span class="keyword">call</span> Run()<span class="symbol">&lt;CR&gt;</span></div><div class="line"><span class="keyword">map</span> <span class="symbol">&lt;F7&gt;</span> :<span class="keyword">make</span><span class="symbol">&lt;CR&gt;</span><span class="symbol">&lt;CR&gt;</span><span class="symbol">&lt;CR&gt;</span> :<span class="keyword">cw</span><span class="symbol">&lt;CR&gt;</span><span class="symbol">&lt;CR&gt;</span></div><div class="line"></div><div class="line"></div><div class="line">func! Run()</div><div class="line">   <span class="keyword">if</span> &amp;<span class="keyword">filetype</span> == <span class="string">"java"</span></div><div class="line">       exec <span class="string">"!java %&lt;"</span></div><div class="line">   <span class="keyword">endif</span></div><div class="line">   <span class="keyword">if</span> &amp;<span class="keyword">filetype</span> == <span class="string">"python"</span></div><div class="line">       exec <span class="string">"!python %"</span></div><div class="line">   <span class="keyword">endif</span></div><div class="line">   exec <span class="string">"!./%&lt;"</span></div><div class="line">endfunc</div><div class="line"></div><div class="line">func SetTitle()</div><div class="line">	<span class="keyword">let</span> <span class="keyword">l</span> = <span class="number">0</span></div><div class="line">	<span class="keyword">let</span> <span class="keyword">l</span> = <span class="keyword">l</span> + <span class="number">1</span> | <span class="keyword">call</span> <span class="built_in">setline</span>(<span class="keyword">l</span>,<span class="string">'/* **********************************************'</span>)</div><div class="line">	<span class="keyword">let</span> <span class="keyword">l</span> = <span class="keyword">l</span> + <span class="number">1</span> | <span class="keyword">call</span> <span class="built_in">setline</span>(<span class="keyword">l</span>,<span class="string">'Auther: haibin'</span>)</div><div class="line">	<span class="keyword">let</span> <span class="keyword">l</span> = <span class="keyword">l</span> + <span class="number">1</span> | <span class="keyword">call</span> <span class="built_in">setline</span>(<span class="keyword">l</span>,<span class="string">'Created Time: '</span>.<span class="built_in">strftime</span>(<span class="string">'%c'</span>))</div><div class="line">	<span class="keyword">let</span> <span class="keyword">l</span> = <span class="keyword">l</span> + <span class="number">1</span> | <span class="keyword">call</span> <span class="built_in">setline</span>(<span class="keyword">l</span>,<span class="string">'File Name   : '</span>.<span class="built_in">expand</span>(<span class="string">'%'</span>))</div><div class="line">	<span class="keyword">let</span> <span class="keyword">l</span> = <span class="keyword">l</span> + <span class="number">1</span> | <span class="keyword">call</span> <span class="built_in">setline</span>(<span class="keyword">l</span>,<span class="string">'*********************************************** */'</span>)</div><div class="line">    <span class="keyword">if</span> &amp;<span class="keyword">filetype</span> == <span class="string">"cpp"</span></div><div class="line">        <span class="keyword">let</span> <span class="keyword">l</span> = <span class="keyword">l</span> + <span class="number">1</span> | <span class="keyword">call</span> <span class="built_in">setline</span>(<span class="keyword">l</span>, <span class="string">'#include &lt;iostream&gt;'</span>)</div><div class="line">        <span class="keyword">let</span> <span class="keyword">l</span> = <span class="keyword">l</span> + <span class="number">1</span> | <span class="keyword">call</span> <span class="built_in">setline</span>(<span class="keyword">l</span>, <span class="string">'#include &lt;cstring&gt;'</span>)</div><div class="line">        <span class="keyword">let</span> <span class="keyword">l</span> = <span class="keyword">l</span> + <span class="number">1</span> | <span class="keyword">call</span> <span class="built_in">setline</span>(<span class="keyword">l</span>, <span class="string">'#include &lt;cstdio&gt;'</span>)</div><div class="line">        <span class="keyword">let</span> <span class="keyword">l</span> = <span class="keyword">l</span> + <span class="number">1</span> | <span class="keyword">call</span> <span class="built_in">setline</span>(<span class="keyword">l</span>, <span class="string">'#include &lt;cstdlib&gt;'</span>)</div><div class="line">        <span class="keyword">let</span> <span class="keyword">l</span> = <span class="keyword">l</span> + <span class="number">1</span> | <span class="keyword">call</span> <span class="built_in">setline</span>(<span class="keyword">l</span>, <span class="string">'using namespace std;'</span>)</div><div class="line">    <span class="keyword">endif</span></div><div class="line">    <span class="keyword">if</span> &amp;<span class="keyword">filetype</span> == <span class="string">"c"</span></div><div class="line">        <span class="keyword">let</span> <span class="keyword">l</span> = <span class="keyword">l</span> + <span class="number">1</span> | <span class="keyword">call</span> <span class="built_in">setline</span>(<span class="keyword">l</span>, <span class="string">'#include &lt;stdio.h&gt;'</span>)</div><div class="line">        <span class="keyword">let</span> <span class="keyword">l</span> = <span class="keyword">l</span> + <span class="number">1</span> | <span class="keyword">call</span> <span class="built_in">setline</span>(<span class="keyword">l</span>, <span class="string">'#include &lt;string.h&gt;'</span>)</div><div class="line">        <span class="keyword">let</span> <span class="keyword">l</span> = <span class="keyword">l</span> + <span class="number">1</span> | <span class="keyword">call</span> <span class="built_in">setline</span>(<span class="keyword">l</span>, <span class="string">'#include &lt;stdlib.h&gt;'</span>)</div><div class="line">    <span class="keyword">endif</span></div><div class="line">endfunc</div><div class="line"></div><div class="line"><span class="keyword">inoremap</span> ( ()<span class="symbol">&lt;Esc&gt;</span>i</div><div class="line"><span class="keyword">inoremap</span> &#123; &#123;&#125;<span class="symbol">&lt;Esc&gt;</span>i<span class="symbol">&lt;CR&gt;</span><span class="symbol">&lt;Esc&gt;</span></div><div class="line"><span class="keyword">inoremap</span> [ []<span class="symbol">&lt;Esc&gt;</span>i</div><div class="line"><span class="keyword">inoremap</span> <span class="string">" "</span><span class="comment">"&lt;Esc&gt;i</span></div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/11/25/胡乱配了下vim/" data-id="civx7sn56000xgrpkk5wiyyyq" class="article-share-link">Поделиться</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vim/">vim</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/周五/">周五</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-todo" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/11/01/todo/" class="article-date">
+  <time datetime="2016-11-01T12:35:56.000Z" itemprop="datePublished">2016-11-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/01/todo/">todo</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li>TDD &amp; BDD</li>
+<li>about <a href="http://www.ruanyifeng.com/blog/2016/09/react-technology-stack.html" target="_blank" rel="external">react</a></li>
+<li>express</li>
+<li>sqli-labs</li>
+<li>wechall</li>
+<li>source code of EOS</li>
+<li>csrf &amp; ssrf</li>
+<li>geek &amp; sycsec =&gt; wp</li>
+<li>xss</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/11/01/todo/" data-id="civx7sn4y000ngrpkyhbwxww0" class="article-share-link">Поделиться</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/todo/">todo</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-关于handlebars模板后缀名" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -92,7 +180,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/01/关于handlebars模板后缀名/" data-id="ciuzeu647000lykpkrf6rybc5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/01/关于handlebars模板后缀名/" data-id="civx7sn54000ugrpkx05a6xem" class="article-share-link">Поделиться</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/express/">express</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/handlebars/">handlebars</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li></ul>
@@ -134,7 +222,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/10/14/wechall-Blinded-by-the-light/" data-id="ciuzeu649000nykpk8vny52yl" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/10/14/wechall-Blinded-by-the-light/" data-id="civx7sn4x000lgrpkc9d57vlp" class="article-share-link">Поделиться</a>
       
       
     </footer>
@@ -174,7 +262,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/10/09/underscore/" data-id="ciuzeu64c000pykpk5x6s0n1g" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/10/09/underscore/" data-id="civx7sn4u000igrpkbll6ykoy" class="article-share-link">Поделиться</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/函数式/">函数式</a></li></ul>
@@ -243,7 +331,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/10/07/函数调用惯例/" data-id="ciuzeu6580023ykpkswxhbj11" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/10/07/函数调用惯例/" data-id="civx7sn53000sgrpkffqgmx9r" class="article-share-link">Поделиться</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/周五/">周五</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/国庆/">国庆</a></li></ul>
@@ -301,7 +389,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/09/23/SQLi-杂/" data-id="ciuzeu63c0001ykpkr5g3a61a" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/09/23/SQLi-杂/" data-id="civx7sn430001grpk6dnxs6r7" class="article-share-link">Поделиться</a>
       
       
     </footer>
@@ -343,7 +431,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/09/23/我还没放弃学英语呢/" data-id="ciuzeu6560022ykpkioge5dn0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/09/23/我还没放弃学英语呢/" data-id="civx7sn55000wgrpkec4e0j9m" class="article-share-link">Поделиться</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/周五/">周五</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习/">学习</a></li></ul>
@@ -429,7 +517,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/09/23/SQLi/" data-id="ciuzeu63j0004ykpk18ntbv8o" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/09/23/SQLi/" data-id="civx7sn4i0007grpka82e6d92" class="article-share-link">Поделиться</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/周五/">周五</a></li></ul>
@@ -468,148 +556,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/09/22/搭了sqli-labs/" data-id="ciuzeu65c0025ykpkbtjcz7qm" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/09/22/搭了sqli-labs/" data-id="civx7sn5v0029grpkzbby7e5u" class="article-share-link">Поделиться</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/周四/">周四</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/好久不记东西/">好久不记东西</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-JSP隐式对象" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/07/26/JSP隐式对象/" class="article-date">
-  <time datetime="2016-07-26T02:04:54.000Z" itemprop="datePublished">2016-07-26</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/26/JSP隐式对象/">JSP隐式对象</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>呐~</p>
-<table>
-<thead>
-<tr>
-<th>对象</th>
-<th>类型</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>request</td>
-<td>javax.servlet.http.HttpServletRequest</td>
-</tr>
-<tr>
-<td>response</td>
-<td>javax.servlet.http.HttpServletResponse</td>
-</tr>
-<tr>
-<td>out</td>
-<td>javax.servlet.jsp.JspWriter</td>
-</tr>
-<tr>
-<td>session</td>
-<td>javax.servlet.http.HttpSession</td>
-</tr>
-<tr>
-<td>application</td>
-<td>javax.servlet.ServletContext</td>
-</tr>
-<tr>
-<td>config</td>
-<td>javax.servlet.ServletConfig</td>
-</tr>
-<tr>
-<td>pageContext</td>
-<td>javax.servlet.jsp.PageContext</td>
-</tr>
-<tr>
-<td>page</td>
-<td>javax.servlet.jsp.HttpJspPage</td>
-</tr>
-<tr>
-<td>exception</td>
-<td>java.lang.Throwable</td>
-</tr>
-</tbody>
-</table>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/07/26/JSP隐式对象/" data-id="ciuzeu6380000ykpkht4dgfet" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jsp/">jsp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web/">web</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/周二/">周二</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-java-shallow-copy-deep-cpoy" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/07/18/java-shallow-copy-deep-cpoy/" class="article-date">
-  <time datetime="2016-07-18T10:15:38.000Z" itemprop="datePublished">2016-07-18</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/18/java-shallow-copy-deep-cpoy/">java|shallow copy &amp; deep cpoy</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在对象复制一节引出的</p>
-<p>对象可以使用Object类的<code>clone()</code>方法来建立自己的副本</p>
-<p>为了使自己是可复制的(cloneable), 要实现<code>java.lang.Cloneable</code>接口</p>
-<p>另外，clone方法是protect，默认的，只能由对象自身，同一个包中的对象或者同类型(或者其子类型)的对象所调用。如果希望对任何对象来说都是可复制的，就必须覆盖其clone()方法，并申明为public。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> java.util.HashMap;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Sheep</span> <span class="keyword">implements</span> <span class="title">Cloneable</span></span>&#123;</div><div class="line"></div><div class="line">    HashMap flock = <span class="keyword">new</span> HashMap();</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> Object <span class="title">clone</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">super</span>.clone();</div><div class="line">        &#125; <span class="keyword">catch</span> (CloneNotSupportedException) &#123;</div><div class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> Error(<span class="string">"This should never happen because we implement Cloneable"</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>但这样在clone时候需要强制类型转换一下</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Sheep one = <span class="keyword">new</span> Sheep();</div><div class="line">Sheep anotherOne = (Sheep)one.clone();</div></pre></td></tr></table></figure>
-<p>如果这样写</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> Sheep <span class="title">clone</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">try</span> &#123;</div><div class="line">        <span class="keyword">return</span> (Sheep)<span class="keyword">super</span>.clone();</div><div class="line">    &#125; <span class="keyword">catch</span> (CloneNotSupportedException) &#123;</div><div class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> Error(<span class="string">"This should never happen because we implement Cloneable"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>就可以写成这样啦</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Sheep one = <span class="keyword">new</span> Sheep();</div><div class="line">Sheep anotherOne = one.clone();</div></pre></td></tr></table></figure>
-<p>上面涉及到的都是<em>浅拷贝</em><br>即one和anotherOne的flock会指向<em>同一个对象</em></p>
-<p>然而，你可以手动<em>深拷贝</em>一下，让大家都有属于自己的HashMap.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Sheep</span> <span class="keyword">implements</span> <span class="title">Cloneable</span></span>&#123;</div><div class="line"></div><div class="line">    HashMap flock = <span class="keyword">new</span> HashMap();</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> Object <span class="title">clone</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            DeepSheep copy = (DeepSheep)<span class="keyword">super</span>.clone();</div><div class="line">            copy.flock = (HashMap)flock.clone();</div><div class="line">            <span class="keyword">return</span> copy;</div><div class="line">        &#125; <span class="keyword">catch</span> (CloneNotSupportedException) &#123;</div><div class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> Error(<span class="string">"This should never happen~"</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>完结～</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/07/18/java-shallow-copy-deep-cpoy/" data-id="ciuzeu63r0008ykpki4jb4jtr" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/周一/">周一</a></li></ul>
 
     </footer>
   </div>
@@ -632,9 +582,9 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
+    <h3 class="widget-title">Метки</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tomcat/">Tomcat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/express/">express</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/handlebars/">handlebars</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jsp/">jsp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/函数式/">函数式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/周一/">周一</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/周三/">周三</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/周二/">周二</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/周五/">周五</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/周四/">周四</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/国庆/">国庆</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/好久不记东西/">好久不记东西</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习/">学习</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tomcat/">Tomcat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/express/">express</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/handlebars/">handlebars</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jsp/">jsp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/todo/">todo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/">vim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/函数式/">函数式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/周一/">周一</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/周三/">周三</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/周二/">周二</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/周五/">周五</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/周四/">周四</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/国庆/">国庆</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/好久不记东西/">好久不记东西</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习/">学习</a></li></ul>
     </div>
   </div>
 
@@ -642,16 +592,16 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
+    <h3 class="widget-title">Облако меток</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Linux/" style="font-size: 16.67px;">Linux</a> <a href="/tags/Tomcat/" style="font-size: 10px;">Tomcat</a> <a href="/tags/express/" style="font-size: 10px;">express</a> <a href="/tags/handlebars/" style="font-size: 10px;">handlebars</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/java/" style="font-size: 16.67px;">java</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/jsp/" style="font-size: 10px;">jsp</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/函数式/" style="font-size: 10px;">函数式</a> <a href="/tags/周一/" style="font-size: 13.33px;">周一</a> <a href="/tags/周三/" style="font-size: 16.67px;">周三</a> <a href="/tags/周二/" style="font-size: 10px;">周二</a> <a href="/tags/周五/" style="font-size: 20px;">周五</a> <a href="/tags/周四/" style="font-size: 13.33px;">周四</a> <a href="/tags/国庆/" style="font-size: 10px;">国庆</a> <a href="/tags/好久不记东西/" style="font-size: 10px;">好久不记东西</a> <a href="/tags/学习/" style="font-size: 10px;">学习</a>
+      <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Linux/" style="font-size: 16.67px;">Linux</a> <a href="/tags/Tomcat/" style="font-size: 10px;">Tomcat</a> <a href="/tags/express/" style="font-size: 10px;">express</a> <a href="/tags/handlebars/" style="font-size: 10px;">handlebars</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/java/" style="font-size: 16.67px;">java</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/jsp/" style="font-size: 10px;">jsp</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/todo/" style="font-size: 10px;">todo</a> <a href="/tags/vim/" style="font-size: 10px;">vim</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/函数式/" style="font-size: 10px;">函数式</a> <a href="/tags/周一/" style="font-size: 13.33px;">周一</a> <a href="/tags/周三/" style="font-size: 16.67px;">周三</a> <a href="/tags/周二/" style="font-size: 10px;">周二</a> <a href="/tags/周五/" style="font-size: 20px;">周五</a> <a href="/tags/周四/" style="font-size: 13.33px;">周四</a> <a href="/tags/国庆/" style="font-size: 10px;">国庆</a> <a href="/tags/好久不记东西/" style="font-size: 10px;">好久不记东西</a> <a href="/tags/学习/" style="font-size: 10px;">学习</a>
     </div>
   </div>
 
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">Архив</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li></ul>
     </div>
@@ -661,9 +611,17 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Недавние записи</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/11/25/胡乱配了下vim/">胡乱配了下vim</a>
+          </li>
+        
+          <li>
+            <a href="/2016/11/01/todo/">todo</a>
+          </li>
         
           <li>
             <a href="/2016/11/01/关于handlebars模板后缀名/">关于handlebars模板后缀名</a>
@@ -675,14 +633,6 @@
         
           <li>
             <a href="/2016/10/09/underscore/">underscore</a>
-          </li>
-        
-          <li>
-            <a href="/2016/10/07/函数调用惯例/">函数调用惯例</a>
-          </li>
-        
-          <li>
-            <a href="/2016/09/23/SQLi-杂/">SQLi-杂</a>
           </li>
         
       </ul>
@@ -698,7 +648,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2016 Haibin<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Создано с помощью <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
