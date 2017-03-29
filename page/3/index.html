@@ -45,9 +45,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS-каналы"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Поиск"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -58,10 +58,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-mark下常用的几个命令" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-underscore" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/07/13/mark下常用的几个命令/" class="article-date">
-  <time datetime="2016-07-13T14:04:24.000Z" itemprop="datePublished">2016-07-13</time>
+    <a href="/2016/10/09/underscore/" class="article-date">
+  <time datetime="2016-10-09T03:23:19.000Z" itemprop="datePublished">2016-10-09</time>
 </a>
     
   </div>
@@ -72,7 +72,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/13/mark下常用的几个命令/">mark下常用的几个命令</a>
+      <a class="article-title" href="/2016/10/09/underscore/">underscore</a>
     </h1>
   
 
@@ -80,25 +80,18 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ul>
-<li><p>cal 显示日历</p>
-<ul>
-<li>cal 本月日历</li>
-<li>cal 10 2016 本月日历</li>
-<li>cal 2016 本年日历</li>
-</ul>
-</li>
-<li><p>date 日期与时间</p>
-</li>
-</ul>
+        <blockquote>
+<p>Underscore is a JavaScript library that provides a whole mess of useful functional programming helpers without extending any built-in objects.</p>
+</blockquote>
+<p>node 里 这样 用就行啦<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//example.js</span></div><div class="line"><span class="keyword">var</span> _ = <span class="built_in">require</span>(<span class="string">'../underscore'</span>);</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">unsplat</span>(<span class="params">fun</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> fun.call(<span class="literal">null</span>, _.toArray(<span class="built_in">arguments</span>));</div><div class="line">  &#125;;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> joinElement = unsplat(<span class="function"><span class="keyword">function</span>(<span class="params">array</span>) </span>&#123;<span class="keyword">return</span> array.join(<span class="string">' '</span>)&#125;);</div><div class="line"></div><div class="line"><span class="keyword">var</span> res = joinElement(<span class="number">1</span>, <span class="number">2</span>);</div><div class="line"><span class="built_in">console</span>.log(res);</div><div class="line"><span class="comment">//=&gt;"1 2"</span></div></pre></td></tr></table></figure></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/07/13/mark下常用的几个命令/" data-id="civx7sn4t000ggrpk3ecc7ymn" class="article-share-link">Поделиться</a>
+      <a data-url="http://yoursite.com/2016/10/09/underscore/" data-id="cj0v12pfx001cm1pkiaovrmil" class="article-share-link">Partager</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/周三/">周三</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/函数式/">函数式</a></li></ul>
 
     </footer>
   </div>
@@ -107,10 +100,10 @@
 
 
   
-    <article id="post-java可见性修饰符" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-函数调用惯例" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/07/13/java可见性修饰符/" class="article-date">
-  <time datetime="2016-07-13T10:38:09.000Z" itemprop="datePublished">2016-07-13</time>
+    <a href="/2016/10/07/函数调用惯例/" class="article-date">
+  <time datetime="2016-10-07T03:29:18.000Z" itemprop="datePublished">2016-10-07</time>
 </a>
     
   </div>
@@ -121,7 +114,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/13/java可见性修饰符/">java可见性修饰符</a>
+      <a class="article-title" href="/2016/10/07/函数调用惯例/">函数调用惯例</a>
     </h1>
   
 
@@ -129,34 +122,34 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>java的可见性修饰符与c++不太一样，尤其他的default是不同于public和pricate的</p>
+        <p>在这里mark一下</p>
 <table>
 <thead>
 <tr>
-<th>修饰符</th>
-<th>可见性</th>
+<th>-</th>
+<th>CDECL</th>
+<th>STDCALL</th>
+<th>FASTCALL</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Private</td>
-<td>无</td>
-<td></td>
+<td>参数</td>
+<td>从左向右压栈<br>调用方负责在掉用后清理栈</td>
+<td>与CDECL相同<br>除了被调用方清理栈</td>
+<td>前两个参数通过ECX和EDX传递<br>其余压入栈</td>
 </tr>
 <tr>
-<td>None(default)</td>
-<td>包中的类</td>
-<td></td>
+<td>返回值</td>
+<td>保存在EAX</td>
+<td>保存在EAX</td>
+<td>保存在EAX</td>
 </tr>
 <tr>
-<td>Protect</td>
-<td>包中的类，以及包中的(或者包外的)子类</td>
-<td></td>
-</tr>
-<tr>
-<td>Public</td>
-<td>所有的类</td>
-<td></td>
+<td>非易失寄存器</td>
+<td>EBP,ESP,EBX,ESI,EDI</td>
+<td>EBP,ESP,EBX,ESI,EDI</td>
+<td>EBP,ESP,EBX,ESI,EDI</td>
 </tr>
 </tbody>
 </table>
@@ -164,10 +157,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/07/13/java可见性修饰符/" data-id="civx7sn4n000agrpkx9wpu3ti" class="article-share-link">Поделиться</a>
+      <a data-url="http://yoursite.com/2016/10/07/函数调用惯例/" data-id="cj0v12pg3001jm1pkgcezrvan" class="article-share-link">Partager</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/周三/">周三</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/周五/">周五</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/国庆/">国庆</a></li></ul>
 
     </footer>
   </div>
@@ -176,10 +169,10 @@
 
 
   
-    <article id="post-java关于变量-方法覆盖" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-SQLi-杂" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/07/13/java关于变量-方法覆盖/" class="article-date">
-  <time datetime="2016-07-13T09:00:37.000Z" itemprop="datePublished">2016-07-13</time>
+    <a href="/2016/09/23/SQLi-杂/" class="article-date">
+  <time datetime="2016-09-23T09:24:48.000Z" itemprop="datePublished">2016-09-23</time>
 </a>
     
   </div>
@@ -190,7 +183,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/13/java关于变量-方法覆盖/">java关于变量/方法覆盖</a>
+      <a class="article-title" href="/2016/09/23/SQLi-杂/">SQLi-杂</a>
     </h1>
   
 
@@ -199,26 +192,413 @@
     <div class="article-entry" itemprop="articleBody">
       
         <ol>
-<li>先看<em>变量的覆盖(遮盖)</em></li>
+<li><p>识别数据库版本一般就是 引入@@version 变量之类的 把他放在一个奇异的地方然后让他报错</p>
+</li>
+<li><p>识别列数的两种方法</p>
+<ul>
+<li>使用 union 查询<ul>
+<li>当结果只能返回一行我们该如何做<br>  ?id = ‘a’ and 1 = 2 union select balabala…(让前面查询永为假)</li>
+<li>为了防止类型不匹配 我们可以用null</li>
+<li>得到列数后, 可以用字符串or数字分别替换null,不报错即得到数据类型</li>
+</ul>
+</li>
+<li>使用 order by id</li>
+</ul>
+</li>
+<li><p>对于oracle这种必须得有from子句的sql方言,可以让他from dual</p>
+</li>
+<li><p>SQL server提供了比其他DBMS更加详尽的信息<br> ?id=2<br> =&gt; ?id=system_user 类型转换错误 可能会爆system_user的值<br> =&gt; ?id=0/@@version 同理<br> =&gt; ?id=char(65 + is_srvrolemember(‘sysadmin’)) 仍然同理</p>
+<p> =&gt; ?id=1 having 1 = 1 爆出第一列列名 如poducts.id<br> =&gt; ?id=1 group by products.id having 1 = 1 爆出第二列列名 如products.name<br> =&gt; …</p>
+</li>
 </ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">InterCalculator</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> sum;</div><div class="line">    ...</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">DecimalCalculator</span> <span class="keyword">extends</span> <span class="title">InterCalculator</span> </span>&#123;</div><div class="line">    <span class="keyword">double</span> sum;</div><div class="line">    ...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>当由一个派生层次更高的类型(父类)来引用一个子类对象，那么被遮蔽的对象会怎样呢</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">DecimalCalculator dc = <span class="keyword">new</span> DecimalCalculator();</div><div class="line">InterCalculator ic = dc;</div><div class="line"></div><div class="line"><span class="keyword">int</span> s = ic.num; <span class="comment">//access InterCalculator sum</span></div><div class="line"></div><div class="line"><span class="comment">// 如果我们访问的对象使用到了InterCalculator类型的显示类型转换或者我们把一个实例传递给接受父类类型的方法，也会是这种情况</span></div></pre></td></tr></table></figure>
-<ol>
-<li>而类似的方法的覆盖,我一直叫 <em>方法的重写</em> (override)</li>
-</ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Animal</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">sleep</span><span class="params">()</span> </span>&#123;</div><div class="line">        ...</div><div class="line">    &#125;</div><div class="line">    ...</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Mammal</span> <span class="keyword">extends</span> <span class="title">Animal</span> </span>&#123;</div><div class="line">    <span class="comment">// override the method sleep</span></div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">sleep</span><span class="params">()</span> </span>&#123;</div><div class="line">        ...</div><div class="line">    &#125;</div><div class="line">    ...</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Cat</span> <span class="keyword">extends</span> <span class="title">Mammal</span> </span>&#123;</div><div class="line">    <span class="comment">// override the method sleep</span></div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">sleep</span><span class="params">()</span> </span>&#123;</div><div class="line"></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>类似上面， 当由一个派生层次更高的类型(父类)来引用一个子类对象，那么被遮蔽的对象会怎样呢</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Cat simon = <span class="keyword">new</span> Cat();</div><div class="line">Animal creature = simon;</div><div class="line">...</div><div class="line">creature.sleep();   <span class="comment">// access Cat sleep</span></div></pre></td></tr></table></figure>
-<p>方法的override与前面的变量的遮蔽不太一样</p>
-<h3 id="从行为来看-Cat就是一个Cat，不管你怎么叫他-而其他时候creature更像一个Animal。要通过Animal引用访问一个被遮蔽的变量，则会找到Animal类的实现，而不是Cat。"><a href="#从行为来看-Cat就是一个Cat，不管你怎么叫他-而其他时候creature更像一个Animal。要通过Animal引用访问一个被遮蔽的变量，则会找到Animal类的实现，而不是Cat。" class="headerlink" title="从行为来看,Cat就是一个Cat，不管你怎么叫他,而其他时候creature更像一个Animal。要通过Animal引用访问一个被遮蔽的变量，则会找到Animal类的实现，而不是Cat。"></a>从行为来看,Cat就是一个Cat，不管你怎么叫他,而其他时候creature更像一个Animal。要通过Animal引用访问一个被遮蔽的变量，则会找到Animal类的实现，而不是Cat。</h3>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/07/13/java关于变量-方法覆盖/" data-id="civx7sn4e0006grpkk2fktx6w" class="article-share-link">Поделиться</a>
+      <a data-url="http://yoursite.com/2016/09/23/SQLi-杂/" data-id="cj0v12pep000dm1pkjanozi8h" class="article-share-link">Partager</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/周三/">周三</a></li></ul>
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-我还没放弃学英语呢" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/09/23/我还没放弃学英语呢/" class="article-date">
+  <time datetime="2016-09-23T09:21:09.000Z" itemprop="datePublished">2016-09-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/23/我还没放弃学英语呢/">我还没放弃学英语呢</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>and enjoy  d听不到 en也听不到</li>
+<li>open up  连读</li>
+<li>‘s 听不到</li>
+<li>keep it 连读</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/09/23/我还没放弃学英语呢/" data-id="cj0v12pg5001mm1pkc3vn5luv" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/周五/">周五</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习/">学习</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-SQLi" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/09/23/SQLi/" class="article-date">
+  <time datetime="2016-09-23T08:54:45.000Z" itemprop="datePublished">2016-09-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/23/SQLi/">SQLi-使用条件语句</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <table>
+<thead>
+<tr>
+<th>数据库</th>
+<th>查询</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SQL Server</td>
+<td>IF(‘a’ = ‘a’)SELECT 1 ELSE SELECT 2</td>
+</tr>
+<tr>
+<td>MySQL</td>
+<td>SELECT IF(‘a’, 1, 2)</td>
+</tr>
+<tr>
+<td>Oracle</td>
+<td>SELECT CASE WHEN ‘a’ = ‘a’ THEN 1 ELSE 2</td>
+</tr>
+<tr>
+<td>PostgreSQL</td>
+<td>SELECT CASE WHEN(1 = 1) THEN ‘a’ ELSE ‘b’ END</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li><p>基于时间的注入(感觉速度会很慢？)</p>
+<ul>
+<li>如果满足条件就延迟5s(或其他时间)<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">IF (system_user = 'sa') WAITFOR DELAY '0:0:5'</div><div class="line">IF (substring((<span class="keyword">select</span> @@<span class="keyword">version</span>), <span class="number">25</span>, <span class="number">1</span>) = <span class="number">5</span>) WAITFOR DELAY <span class="string">'0:0:5'</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>基于错误的注入</p>
+<ul>
+<li>比如除0<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">?id=12 / is_srvrolemember(&apos;sysadmin&apos;)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>基于内容的注入</p>
+<ul>
+<li><p>比如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">porducts.asp?id = 12 + (case when (system_user = &apos;sa&apos;) then 1 else 0 end)</div></pre></td></tr></table></figure>
+<p>  条件成功返回id=13的商品, 否则返回id=12的</p>
+</li>
+</ul>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/09/23/SQLi/" data-id="cj0v12per000gm1pk8imxait0" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/周五/">周五</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-搭了sqli-labs" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/09/22/搭了sqli-labs/" class="article-date">
+  <time datetime="2016-09-22T13:53:15.000Z" itemprop="datePublished">2016-09-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/22/搭了sqli-labs/">搭了sqli-labs</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>搭了sqli-labs 在8888端口</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/09/22/搭了sqli-labs/" data-id="cj0v12pg8001om1pklu9gk1um" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/周四/">周四</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/好久不记东西/">好久不记东西</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-JSP隐式对象" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/07/26/JSP隐式对象/" class="article-date">
+  <time datetime="2016-07-26T02:04:54.000Z" itemprop="datePublished">2016-07-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/26/JSP隐式对象/">JSP隐式对象</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>呐~</p>
+<table>
+<thead>
+<tr>
+<th>对象</th>
+<th>类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>request</td>
+<td>javax.servlet.http.HttpServletRequest</td>
+</tr>
+<tr>
+<td>response</td>
+<td>javax.servlet.http.HttpServletResponse</td>
+</tr>
+<tr>
+<td>out</td>
+<td>javax.servlet.jsp.JspWriter</td>
+</tr>
+<tr>
+<td>session</td>
+<td>javax.servlet.http.HttpSession</td>
+</tr>
+<tr>
+<td>application</td>
+<td>javax.servlet.ServletContext</td>
+</tr>
+<tr>
+<td>config</td>
+<td>javax.servlet.ServletConfig</td>
+</tr>
+<tr>
+<td>pageContext</td>
+<td>javax.servlet.jsp.PageContext</td>
+</tr>
+<tr>
+<td>page</td>
+<td>javax.servlet.jsp.HttpJspPage</td>
+</tr>
+<tr>
+<td>exception</td>
+<td>java.lang.Throwable</td>
+</tr>
+</tbody>
+</table>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/07/26/JSP隐式对象/" data-id="cj0v12ped0006m1pknz3po5q8" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jsp/">jsp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web/">web</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/周二/">周二</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-java-shallow-copy-deep-cpoy" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/07/18/java-shallow-copy-deep-cpoy/" class="article-date">
+  <time datetime="2016-07-18T10:15:38.000Z" itemprop="datePublished">2016-07-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/18/java-shallow-copy-deep-cpoy/">java|shallow copy &amp; deep cpoy</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在对象复制一节引出的</p>
+<p>对象可以使用Object类的<code>clone()</code>方法来建立自己的副本</p>
+<p>为了使自己是可复制的(cloneable), 要实现<code>java.lang.Cloneable</code>接口</p>
+<p>另外，clone方法是protect，默认的，只能由对象自身，同一个包中的对象或者同类型(或者其子类型)的对象所调用。如果希望对任何对象来说都是可复制的，就必须覆盖其clone()方法，并申明为public。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> java.util.HashMap;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Sheep</span> <span class="keyword">implements</span> <span class="title">Cloneable</span></span>&#123;</div><div class="line"></div><div class="line">    HashMap flock = <span class="keyword">new</span> HashMap();</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> Object <span class="title">clone</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">super</span>.clone();</div><div class="line">        &#125; <span class="keyword">catch</span> (CloneNotSupportedException) &#123;</div><div class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> Error(<span class="string">"This should never happen because we implement Cloneable"</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>但这样在clone时候需要强制类型转换一下</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Sheep one = <span class="keyword">new</span> Sheep();</div><div class="line">Sheep anotherOne = (Sheep)one.clone();</div></pre></td></tr></table></figure>
+<p>如果这样写</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> Sheep <span class="title">clone</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">try</span> &#123;</div><div class="line">        <span class="keyword">return</span> (Sheep)<span class="keyword">super</span>.clone();</div><div class="line">    &#125; <span class="keyword">catch</span> (CloneNotSupportedException) &#123;</div><div class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> Error(<span class="string">"This should never happen because we implement Cloneable"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>就可以写成这样啦</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Sheep one = <span class="keyword">new</span> Sheep();</div><div class="line">Sheep anotherOne = one.clone();</div></pre></td></tr></table></figure>
+<p>上面涉及到的都是<em>浅拷贝</em><br>即one和anotherOne的flock会指向<em>同一个对象</em></p>
+<p>然而，你可以手动<em>深拷贝</em>一下，让大家都有属于自己的HashMap.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Sheep</span> <span class="keyword">implements</span> <span class="title">Cloneable</span></span>&#123;</div><div class="line"></div><div class="line">    HashMap flock = <span class="keyword">new</span> HashMap();</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> Object <span class="title">clone</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            DeepSheep copy = (DeepSheep)<span class="keyword">super</span>.clone();</div><div class="line">            copy.flock = (HashMap)flock.clone();</div><div class="line">            <span class="keyword">return</span> copy;</div><div class="line">        &#125; <span class="keyword">catch</span> (CloneNotSupportedException) &#123;</div><div class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> Error(<span class="string">"This should never happen~"</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>完结～</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/07/18/java-shallow-copy-deep-cpoy/" data-id="cj0v12pfd0010m1pkak9m82zd" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/周一/">周一</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-java匿名内部类" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/07/18/java匿名内部类/" class="article-date">
+  <time datetime="2016-07-18T07:36:52.000Z" itemprop="datePublished">2016-07-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/18/java匿名内部类/">java匿名内部类</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/07/18/java匿名内部类/" data-id="cj0v12pf7000tm1pkigoyr93m" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-关于Java" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/07/18/关于Java/" class="article-date">
+  <time datetime="2016-07-18T05:06:28.000Z" itemprop="datePublished">2016-07-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/18/关于Java/">关于Java</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>作为一条通用规则，类在范围的封装和受限层次越深，对其命名的自由度也越大(什么意思。。)</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/07/18/关于Java/" data-id="cj0v12pgd001vm1pkzn6sitv8" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/周一/">周一</a></li></ul>
 
     </footer>
   </div>
@@ -230,7 +610,7 @@
 
 
   <nav id="page-nav">
-    <a class="extend prev" rel="prev" href="/page/2/">&laquo; __('prev')</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+    <a class="extend prev" rel="prev" href="/page/2/">&laquo; __('prev')</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">__('next') &raquo;</a>
   </nav>
 </section>
         
@@ -241,9 +621,9 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Метки</h3>
+    <h3 class="widget-title">Mot-clés</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tomcat/">Tomcat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/express/">express</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/handlebars/">handlebars</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jsp/">jsp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/todo/">todo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/">vim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/函数式/">函数式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/周一/">周一</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/周三/">周三</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/周二/">周二</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/周五/">周五</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/周四/">周四</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/国庆/">国庆</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/好久不记东西/">好久不记东西</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习/">学习</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cookie/">Cookie</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LFI/">LFI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RFI/">RFI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQLi/">SQLi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Session/">Session</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tomcat/">Tomcat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/decode/">decode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/express/">express</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/handlebars/">handlebars</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jsp/">jsp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/latex/">latex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/">test</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/todo/">todo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/">vim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/函数式/">函数式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/周一/">周一</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/周三/">周三</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/周二/">周二</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/周五/">周五</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/周四/">周四</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/周日/">周日</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/周末/">周末</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/国庆/">国庆</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/好久不见/">好久不见</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/好久不记/">好久不记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/好久不记东西/">好久不记东西</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习/">学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/寒假/">寒假</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/常用/">常用</a></li></ul>
     </div>
   </div>
 
@@ -251,18 +631,18 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Облако меток</h3>
+    <h3 class="widget-title">Nuage de mot-clés</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Linux/" style="font-size: 16.67px;">Linux</a> <a href="/tags/Tomcat/" style="font-size: 10px;">Tomcat</a> <a href="/tags/express/" style="font-size: 10px;">express</a> <a href="/tags/handlebars/" style="font-size: 10px;">handlebars</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/java/" style="font-size: 16.67px;">java</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/jsp/" style="font-size: 10px;">jsp</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/todo/" style="font-size: 10px;">todo</a> <a href="/tags/vim/" style="font-size: 10px;">vim</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/函数式/" style="font-size: 10px;">函数式</a> <a href="/tags/周一/" style="font-size: 13.33px;">周一</a> <a href="/tags/周三/" style="font-size: 16.67px;">周三</a> <a href="/tags/周二/" style="font-size: 10px;">周二</a> <a href="/tags/周五/" style="font-size: 20px;">周五</a> <a href="/tags/周四/" style="font-size: 13.33px;">周四</a> <a href="/tags/国庆/" style="font-size: 10px;">国庆</a> <a href="/tags/好久不记东西/" style="font-size: 10px;">好久不记东西</a> <a href="/tags/学习/" style="font-size: 10px;">学习</a>
+      <a href="/tags/Cookie/" style="font-size: 10px;">Cookie</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/LFI/" style="font-size: 10px;">LFI</a> <a href="/tags/Linux/" style="font-size: 15px;">Linux</a> <a href="/tags/RFI/" style="font-size: 10px;">RFI</a> <a href="/tags/SQLi/" style="font-size: 12.5px;">SQLi</a> <a href="/tags/Session/" style="font-size: 10px;">Session</a> <a href="/tags/Tomcat/" style="font-size: 10px;">Tomcat</a> <a href="/tags/decode/" style="font-size: 10px;">decode</a> <a href="/tags/express/" style="font-size: 10px;">express</a> <a href="/tags/handlebars/" style="font-size: 10px;">handlebars</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/java/" style="font-size: 15px;">java</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/jsp/" style="font-size: 10px;">jsp</a> <a href="/tags/latex/" style="font-size: 10px;">latex</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/todo/" style="font-size: 10px;">todo</a> <a href="/tags/vim/" style="font-size: 12.5px;">vim</a> <a href="/tags/web/" style="font-size: 17.5px;">web</a> <a href="/tags/函数式/" style="font-size: 10px;">函数式</a> <a href="/tags/周一/" style="font-size: 12.5px;">周一</a> <a href="/tags/周三/" style="font-size: 17.5px;">周三</a> <a href="/tags/周二/" style="font-size: 12.5px;">周二</a> <a href="/tags/周五/" style="font-size: 20px;">周五</a> <a href="/tags/周四/" style="font-size: 12.5px;">周四</a> <a href="/tags/周日/" style="font-size: 10px;">周日</a> <a href="/tags/周末/" style="font-size: 10px;">周末</a> <a href="/tags/国庆/" style="font-size: 10px;">国庆</a> <a href="/tags/好久不见/" style="font-size: 10px;">好久不见</a> <a href="/tags/好久不记/" style="font-size: 10px;">好久不记</a> <a href="/tags/好久不记东西/" style="font-size: 10px;">好久不记东西</a> <a href="/tags/学习/" style="font-size: 10px;">学习</a> <a href="/tags/寒假/" style="font-size: 10px;">寒假</a> <a href="/tags/常用/" style="font-size: 12.5px;">常用</a>
     </div>
   </div>
 
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Архив</h3>
+    <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li></ul>
     </div>
   </div>
 
@@ -270,28 +650,28 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Недавние записи</h3>
+    <h3 class="widget-title">Articles récents</h3>
     <div class="widget">
       <ul>
         
           <li>
-            <a href="/2016/11/25/胡乱配了下vim/">胡乱配了下vim</a>
+            <a href="/2017/03/29/html-js-decode/">html &amp; js - decode</a>
           </li>
         
           <li>
-            <a href="/2016/11/01/todo/">todo</a>
+            <a href="/2017/03/25/NJCTF2017-login/">NJCTF2017-login</a>
           </li>
         
           <li>
-            <a href="/2016/11/01/关于handlebars模板后缀名/">关于handlebars模板后缀名</a>
+            <a href="/2017/03/25/binary-in-Mysql/">binary in Mysql</a>
           </li>
         
           <li>
-            <a href="/2016/10/14/wechall-Blinded-by-the-light/">wechall|Blinded by the light</a>
+            <a href="/2017/03/25/FI/">FI</a>
           </li>
         
           <li>
-            <a href="/2016/10/09/underscore/">underscore</a>
+            <a href="/2017/03/25/权限/">权限</a>
           </li>
         
       </ul>
@@ -306,8 +686,8 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2016 Haibin<br>
-      Создано с помощью <a href="http://hexo.io/" target="_blank">Hexo</a>
+      &copy; 2017 Haibin<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
